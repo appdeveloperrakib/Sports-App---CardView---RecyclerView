@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,7 +55,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.SportsView
         return sportList.size();
     }
 
-    public static class SportsViewHolder extends RecyclerView.ViewHolder{
+    public class SportsViewHolder extends RecyclerView.ViewHolder{
         //Holds the references to the views within the item layout
 
         TextView textView;
@@ -65,7 +66,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.SportsView
 
             textView = itemView.findViewById(R.id.textView);
             imageView = itemView.findViewById(R.id.imageView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if(position != RecyclerView.NO_POSITION){
+
+                        Sport sport = sportList.get(position);
+                        String sportName = sport.getSportName();
+                        Toast.makeText(view.getContext(), ""+position, Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
+
         }
+
     }
 
 

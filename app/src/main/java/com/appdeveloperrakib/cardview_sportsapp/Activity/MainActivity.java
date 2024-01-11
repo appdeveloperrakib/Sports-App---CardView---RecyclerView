@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.appdeveloperrakib.cardview_sportsapp.Adapter.CustomAdapter;
 import com.appdeveloperrakib.cardview_sportsapp.Model.Sport;
@@ -52,11 +54,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-
-
-
-
-
-
     }
+
 }
